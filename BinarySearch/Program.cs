@@ -6,20 +6,20 @@ namespace BinarySearch
     class Binary
     {
 
-        static int searchRecursive(List<int> sort, int num,int mid)
+        static int SearchRecursive(List<int> sort, int num,int mid)
         {
             if (mid >= sort.Count || mid < 0)
                 return -1;
             if (sort[mid] == num)
                 return mid; 
             if(sort[mid]>num)
-                return searchRecursive(sort, num, (mid / 2) + 1);
+                return SearchRecursive(sort, num, (mid / 2) + 1);
             if (sort[mid] < num)
-                return searchRecursive(sort, num, sort.Count - (mid / 2) - 1);
+                return SearchRecursive(sort, num, sort.Count - (mid / 2) - 1);
             return -1;
         }
 
-        static int searchIterative(List<int> sort, int num, int mid)
+        static int SearchIterative(List<int> sort, int num, int mid)
         {
             while (true)
             {
@@ -49,7 +49,7 @@ namespace BinarySearch
 
             IList<int> sort = new List<int>() { 4, 5, 8, 9, 65, 67, 68, 69, 99};
             var currentNumber =68;
-            Console.WriteLine(searchIterative((List<int>)sort, currentNumber, sort.Count /2));
+            Console.WriteLine(SearchIterative((List<int>)sort, currentNumber, sort.Count /2));
             return 0;
         }
     }
